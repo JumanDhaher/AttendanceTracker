@@ -15,42 +15,13 @@ struct ContentView: View {
         NavigationStack{
             VStack(alignment: .leading,spacing: 12){
                 Text("Summary").font(.largeTitle)
-                ZStack (alignment: .topLeading) {
+ 
+                boxContent(title:"Absence Days",dec:"Exceeding 15 days of absences without an excuse will disqualify you from the program.",precentage: "5/15")
+              
+                boxContent(title:"Absence Days",dec:"Exceeding 15 days of absences without an excuse will disqualify you from the program.",precentage: "5/15")
                 
-                RoundedRectangle(cornerRadius: 25).fill(Color.white)
-                    HStack{
-                        VStack(alignment:.leading){
-                            Text("Absence Days").font(.title2)
-                            Text("Exceeding 15 days of absences without an excuse will disqualify you from the program.").font(Font.system(size: 12)).frame(maxWidth:140)
-                        }
-                        Spacer()
-                        ZStack {
-                                   Circle()
-                                       .stroke(
-                                           Color.red.opacity(0.5),
-                                           lineWidth: 15
-                                       )
-                            Text("5/15").font(.title3)
-                                   Circle()
-                                .trim(from: 0, to: 0.8) // 1
-                                       .stroke(
-                                           Color.red,
-                                           lineWidth: 15
-                                       )
-                               }
-                        
-                        
-                    }.padding()
-             
-
-
-                } .background(Color.white)
-                    .cornerRadius(12)
-                    .frame(width: .infinity,height: 130)
-               
-        
+                boxContent(title:"Absence Days",dec:"Exceeding 15 days of absences without an excuse will disqualify you from the program.",precentage: "5/15")
                 
-             
                 Spacer()
                 
                 
@@ -73,6 +44,38 @@ struct ContentView: View {
             
         }
     }
+    
+    func boxContent(title: String,dec:String,precentage:String) -> some View  {
+       return ZStack (alignment: .topLeading) {
+            RoundedRectangle(cornerRadius: 25).fill(Color.white)
+            HStack{
+                VStack(alignment:.leading){
+                    Text(title).font(.title2)
+                    Text(dec).font(Font.system(size: 12)).frame(maxWidth:140)
+                }
+                Spacer()
+                ZStack {
+                           Circle()
+                               .stroke(
+                                   Color.red.opacity(0.5),
+                                   lineWidth: 15
+                               )
+                    Text(precentage).font(.title3)
+                           Circle()
+                        .trim(from: 0, to: 0.8) // 1
+                               .stroke(
+                                   Color.red,
+                                   lineWidth: 15
+                               )
+                       }
+                        
+            }.padding()
+
+        } .background(Color.white)
+            .cornerRadius(12)
+            .frame(width: .infinity,height: 130)
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
