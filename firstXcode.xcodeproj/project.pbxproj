@@ -68,6 +68,7 @@
 				6FCE66D12AD28E7E001264FF /* SendExcuseView.swift */,
 				6FCE66D32AD28F56001264FF /* LateHoursView.swift */,
 				6FCE66D52AD28F7A001264FF /* AbsenceDaysView.swift */,
+				6F88405C2ACE93C40053258D /* Assets.xcassets */,
 				6F88405E2ACE93C40053258D /* Preview Content */,
 			);
 			path = firstXcode;
@@ -76,7 +77,6 @@
 		6F88405E2ACE93C40053258D /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				6F88405C2ACE93C40053258D /* Assets.xcassets */,
 				6F88405F2ACE93C40053258D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
