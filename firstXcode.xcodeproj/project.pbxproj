@@ -11,6 +11,11 @@
 		6F88405B2ACE93C30053258D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F88405A2ACE93C30053258D /* ContentView.swift */; };
 		6F88405D2ACE93C40053258D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F88405C2ACE93C40053258D /* Assets.xcassets */; };
 		6F8840602ACE93C40053258D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F88405F2ACE93C40053258D /* Preview Assets.xcassets */; };
+		6FCE66CE2AD28659001264FF /* GuidebookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCE66CD2AD28659001264FF /* GuidebookView.swift */; };
+		6FCE66D02AD28DEA001264FF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCE66CF2AD28DEA001264FF /* LoginView.swift */; };
+		6FCE66D22AD28E7E001264FF /* SendExcuseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCE66D12AD28E7E001264FF /* SendExcuseView.swift */; };
+		6FCE66D42AD28F56001264FF /* LateHoursView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCE66D32AD28F56001264FF /* LateHoursView.swift */; };
+		6FCE66D62AD28F7A001264FF /* AbsenceDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCE66D52AD28F7A001264FF /* AbsenceDaysView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		6F88405A2ACE93C30053258D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6F88405C2ACE93C40053258D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F88405F2ACE93C40053258D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6FCE66CD2AD28659001264FF /* GuidebookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidebookView.swift; sourceTree = "<group>"; };
+		6FCE66CF2AD28DEA001264FF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		6FCE66D12AD28E7E001264FF /* SendExcuseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendExcuseView.swift; sourceTree = "<group>"; };
+		6FCE66D32AD28F56001264FF /* LateHoursView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateHoursView.swift; sourceTree = "<group>"; };
+		6FCE66D52AD28F7A001264FF /* AbsenceDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsenceDaysView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +62,12 @@
 			isa = PBXGroup;
 			children = (
 				6F8840582ACE93C30053258D /* firstXcodeApp.swift */,
+				6FCE66CF2AD28DEA001264FF /* LoginView.swift */,
 				6F88405A2ACE93C30053258D /* ContentView.swift */,
-				6F88405C2ACE93C40053258D /* Assets.xcassets */,
+				6FCE66CD2AD28659001264FF /* GuidebookView.swift */,
+				6FCE66D12AD28E7E001264FF /* SendExcuseView.swift */,
+				6FCE66D32AD28F56001264FF /* LateHoursView.swift */,
+				6FCE66D52AD28F7A001264FF /* AbsenceDaysView.swift */,
 				6F88405E2ACE93C40053258D /* Preview Content */,
 			);
 			path = firstXcode;
@@ -62,6 +76,7 @@
 		6F88405E2ACE93C40053258D /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				6F88405C2ACE93C40053258D /* Assets.xcassets */,
 				6F88405F2ACE93C40053258D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -138,7 +153,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F88405B2ACE93C30053258D /* ContentView.swift in Sources */,
+				6FCE66CE2AD28659001264FF /* GuidebookView.swift in Sources */,
+				6FCE66D62AD28F7A001264FF /* AbsenceDaysView.swift in Sources */,
+				6FCE66D42AD28F56001264FF /* LateHoursView.swift in Sources */,
+				6FCE66D02AD28DEA001264FF /* LoginView.swift in Sources */,
 				6F8840592ACE93C30053258D /* firstXcodeApp.swift in Sources */,
+				6FCE66D22AD28E7E001264FF /* SendExcuseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
