@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SendExcuseView: View{
     var body:some View{
-      
             ScrollView{
 
             }.padding().navigationTitle(Text("Send Excuse"))
@@ -25,4 +24,6 @@ struct SendExcuseView_Previews: PreviewProvider {
         SendExcuseView().preferredColorScheme(.dark)
     }
 }
+
+
 

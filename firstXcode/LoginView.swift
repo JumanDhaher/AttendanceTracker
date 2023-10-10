@@ -8,19 +8,42 @@
 import SwiftUI
 
 struct LoginView: View{
+    
+    @State var email : String = ""
 
     var body:some View{
-        NavigationView{
-            ScrollView{
+        NavigationStack{
+            VStack(alignment:.leading){
+                
+                Spacer()
+
+                Text("Email")
+                TextField("email @ twq.idserve.net",text: $email)
+                    .padding()
+                    .background(Color("CardColor")).foregroundColor(Color("SubtitleColor"))
+                    .cornerRadius(10)
+                HStack{
+                    Image(systemName: "info.circle")
+                    Text("Insert your achademic email").foregroundColor(Color("TitleColor"))
+                }
                 
                 NavigationLink(destination: ContentView(),
-                 label:{
-                    Text("Login")
+                               label:{
+                    
+                    HStack{
+                        Spacer()
+                        Text("Login")
+                        Spacer()
+
+                    }
                 })
                 
+                Spacer()
+                
             }
-        }.padding().navigationTitle(Text("Lgoin"))
-            .navigationBarHidden(true)
+            .padding().padding().background(Color("Background"))
+        }
+        .navigationTitle(Text("Lgoin"))
             .navigationBarBackButtonHidden(true)
     }
     
