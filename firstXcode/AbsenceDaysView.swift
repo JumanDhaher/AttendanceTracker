@@ -9,10 +9,8 @@ import SwiftUI
 
 struct AbsenceDaysView: View{
     var body:some View{
-        NavigationView{
             ScrollView{
 
-            }
         }.padding().navigationTitle(Text("Absence Days"))
     }
     

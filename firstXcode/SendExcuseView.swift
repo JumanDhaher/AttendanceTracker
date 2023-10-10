@@ -9,11 +9,10 @@ import SwiftUI
 
 struct SendExcuseView: View{
     var body:some View{
-        NavigationView{
+      
             ScrollView{
 
-            }
-        }.padding().navigationTitle(Text("Send Excuse"))
+            }.padding().navigationTitle(Text("Send Excuse"))
     }
     
 }

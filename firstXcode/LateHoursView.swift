@@ -9,10 +9,8 @@ import SwiftUI
 
 struct LateHoursView: View{
     var body:some View{
-        NavigationView{
             ScrollView{
 
-            }
         }.padding().navigationTitle(Text("Late Hours"))
     }
     

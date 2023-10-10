@@ -9,41 +9,65 @@ import SwiftUI
 
 struct GuidBookView: View{
     var body:some View{
-        NavigationView{
             ScrollView{
+                VStack(alignment: .leading){
+                    Text("Policy attendance system policy").font(.title2)
+                    
+            Text("""
             
-                    Text("""
-            سياسة نظام الحضور والانصراف
+            • Learners should attend their weekly sessions at the specified time according to the schedule, and perform their required tasks during the weekdays from Sunday to Thursday from 9:00 am to 1:00 pm or from 2:00 pm to 6:00 pm except on official holidays. The student affairs coordinator and the student advisor should be informed if the learner is absent for any conditions.
             
-            • على المتدربة الحضور في الوقت المحدد حسب الجدول مع تأدية المهام المطلوبة خلال أيام الأسبوع من يوم الأحد إلى يوم الخميس من 9:00 صباحاً -01:00 مساءً أو من 02:00 مساءً حتى 06:00 مساءً باستثناء الإجازات الرسمية. ويجب إحاطة المنسق الطلابي والمرشد الشخصي عند الغياب لظروف قاهرة.\n
-            • يجب على المتدربة تسجيل الدخول لاحتساب الحضور بمجرد الدخول لمبنى الأكاديمية، وعند التأخر ١٥ دقيقة في تسجيل الدخول سيتم تلقائياً احتساب تأخير المتدربات.\n
-            • يتم احتساب الحضور والغياب أيام ورش العمل واللقاءات بتواجد المتدربة في مقر الورشة أو اللقاء وسيتم احتساب غياب بدون عذر حال عدم التواجد.\n
-            • الغياب المسموح للمتدربة بحد أقصى ١٥ يوم فقط خلال البرنامج من غير عذر رسمي.\n
-            • تملك المتدربة رصيد استئذان ساعتين شهريًا يمكن استخدامها بعد إبلاغ المنسق الطلابي.\n
-            • تطبق الإجازات الرسمية في الأكاديمية بما يتماشى مع أنظمة إجازات المملكة العربية السعودية في حالات الزوج والولادة والوفاة وغيرها.\n
-            • تطبق الإجازات الرسمية للدولة في الأعياد والأيام الوطنية.\n
-            • ينتقل التعليم عن بعد في حالات الطوارئ.\n
-            • يتم احتساب الغياب بعذر في وقت الاختبارات في حال تعارض وقت الأكاديمية مع وقت الاختبار.\n
-            • على المتدربة إبلاغ المنسق الطلابي عند الانضمام للأكاديمية بأي مشاكل أسرية أو صحية أو نفسية تعاني منها.\n
-            • عند غياب المتدربة بسبب المرض أو المكوث في المستشفى أو لظروف قاهرة، فينبغي على المتدربة رفع الأعذار الرسمية، مع الإحاطة بأنه إذا تغيبت المتدربة ٥ أيام متتالية بدون إشعار للمنسق الطلابي سيتم اقصاءها مباشرة من البرنامج.\n
-            • الوثائق المطلوبة:
-            ١- المكوث في المستشفى - تقرير من منصة صحتي
-            ٢- الظروف القاهرة - احضار مايثبت ذلك من تقارير رسمية
-            ٣- فقدان أحد افراد الأسرة (الجدة-الجد-الوالدين-الأبناء-الأخوة) - نسخة من إبلاغ الوفاة من المستشفى أو الجهة المعنية + نسخة من بطاقة العائلة.\n
-            - التحذيرات والإنذارات\n
-            • يتم إرسال تنبيه أول للمتدربة عند تجاوز عدد أيام الغياب بدون عذر رسمي ٣ ايام متتالية.\n
-            • يتم إرسال تنبيه ثاني للمتدربة عند تجاوز عدد أيام الغياب بدون عذر رسمي ١٠ ايام متفرقة.\n
-            • يتم إرسال تحذير أخير للمتدربة عند تجاوز عدد أيام الغياب بدون رسمي ١٤ يوم.\n
-            • يتم إقصاء المتدربة من الأكاديمية وحرمانها من استكمال البرنامج والحصول على الشهادة الأكاديمية عند تجاوز عدد أيام الغياب بدون عذر رسمي ١٥ يومًا.\n
-            • يجب تقديم أعذار رسمية وتزويد المنسق الطلابي بالمستندات لاحتساب الغياب بعذر.\n
-            • عند وصول عدد ساعات التأخير للمتدربة ٤ ساعات سيتم احتسابها كغياب يوم بدون عذر.\n
-            • عند الخروج بدون تسجيل الانصراف سيتم احتساب ساعة تأخير.\n
-            • للأكاديمية حق حرمان المتدربة من الشهادة الأكاديمية عند الغياب في جلسات مراجعة التطبيقات دون تقديم عذر رسمي (App Review)\n
+            • Leraners must check in to verify their attendence once they enter the academy’s building. If the check in was late by more than 15 minutes, late attendance will be counted for the learners.
+             
+            • Attendance and absence is counted during workshops and meetings•
+            
+            • The permitted absence days for the learner is 15 days at most during the academy’s program without an excuse.
+            
+            • The learner has a credit of 2 hours leave per month that she can use after informing the students affairs coordinator.
+            
+            • Official holidays are applied at the academy in line with the leave regulations of the Kingdom of Saudi Arabia in cases of marriage, birth, death, etc.
+            
+            • Official holidays of the country are applied in the academy for all national holidays.
+            
+            • The academy’s program will be held online in case of emergency situations.
+            
+            • Excused absences will be counted at the time of exams if the academy’s program time conflicts with the exam time.
+            
+            • The learner must inform the student affiars coordinator upon joining the academy of any family, health, or psychological problems she suffers from
+            
+            • When the learner is absent due to illness, hospitalization, or force conditions, the learner must send an official excuse, noting that if the learner is absent for 5 consecutive days without informing the student affairs coordinator, she will be immediately excluded from the program.
+            
+            - Required documents:
+            
+            1- Staying in hospital - A report from Sehaty Platform must be provided.
+             
+            2- Force conditions - Official reports that prove these conditions must be provided.
+            
+            3- Losing a family member (Grandparents/ Parents/ Children/ Siblings) - A copy of death certificate from the hospital or the concerned authority + A copy of the family card must be provided.
+            
+            - Warnings and notices:
+            
+            • A first notice is sent to the learner when the number of absence days without an official excuse exceeds 3 consecutive days.
+            
+            • A second notice is sent to the learner when the number of absence days without an official excuse exceeds 10 separate days.
+            
+            • A final warning is sent to the learner when the number of absence days without an official excuse exceeds 14 days.
+            
+            • The learner will be excluded from the academy and prevented from completeing the program and obtainig the academic certificate when the number of days of absence without an official excuse exceeds 15 days.
+            
+            • Official excuses and documents must be provided to the student affairs coordinator to count it as an excused absence.
+            
+            • When the learner’s late hours reaches 4 hours of late attendence, it will be counted as an unexcused absence.
+            
+            • When the learner leaves without checking out, one hour will be counted of her late hours.
+            
+            • The Academy has the full right to deprive the learner of the academic certificate when she is absent in application review sessions (App review) without providing an offical excuse.
+            
+            
             """)
-            }.multilineTextAlignment(.trailing)
-            
-        }.padding().navigationTitle(Text("The Guide Book"))
-    }
+                }.multilineTextAlignment(.leading).padding()
+            }.padding().navigationTitle(Text("The Guide Book"))
+        }
     
 }
 
