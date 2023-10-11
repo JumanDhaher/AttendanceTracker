@@ -6,48 +6,72 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct LoginView: View{
     
-    @State var email : String = ""
+    @State private var email : String = ""
+    @State private var userIsLoggedIn : Bool = false
+    
 
     var body:some View{
         NavigationStack{
-            VStack(alignment:.leading){
-                
-                Spacer()
-
-                Text("Email")
-                TextField("email @ twq.idserve.net",text: $email)
-                    .padding()
-                    .background(Color("CardColor")).foregroundColor(Color("SubtitleColor"))
-                    .cornerRadius(10)
-                HStack{
-                    Image(systemName: "info.circle")
-                    Text("Insert your achademic email").foregroundColor(Color("TitleColor"))
-                }
-                
-                NavigationLink(destination: ContentView(),
-                               label:{
+            if(userIsLoggedIn){
+                ContentView()
+            }else{
+                VStack(alignment:.leading){
                     
+                    Spacer()
+                    
+                    Text("Email")
+                    TextField("email @ twq.idserve.net",text: $email)
+                        .padding()
+                        .background(Color("CardColor")).foregroundColor(Color("SubtitleColor"))
+                        .cornerRadius(10)
                     HStack{
-                        Spacer()
-                        Text("Login")
-                        Spacer()
-
+                        Image(systemName: "info.circle")
+                        Text("Insert your achademic email").foregroundColor(Color("TitleColor"))
                     }
-                })
-                
-                Spacer()
-                
+                    
+                    Button{
+                        login()
+                    } label:{
+                        HStack{
+                            Spacer()
+                            Text("Login")
+                            Spacer()
+                        }
+                    }.onAppear{
+                        Auth.auth().addStateDidChangeListener{(auth ,user) in
+                            if user != nil{
+                                userIsLoggedIn.toggle()
+                            }
+                        }
+                    }
+                    
+                    Spacer()
+                    
+                }
+                .padding().padding().background(Color("Background"))
             }
-            .padding().padding().background(Color("Background"))
+              //  .navigationTitle(Text("Lgoin"))
+                //.navigationBarBackButtonHidden(true)
         }
-        .navigationTitle(Text("Lgoin"))
-            .navigationBarBackButtonHidden(true)
+    }
+    
+    
+    func login(){
+        print("tittle",email)
+        
+        Auth.auth().signIn(withEmail: email.lowercased(), password: "1234567"){result,error in
+            if error != nil{
+                print(error!.localizedDescription)
+            }
+        }
     }
     
 }
+
 
 
 
