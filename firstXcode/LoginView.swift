@@ -56,7 +56,7 @@ struct LoginView: View{
             }
               //  .navigationTitle(Text("Lgoin"))
                 //.navigationBarBackButtonHidden(true)
-        }
+        }.navigationBarHidden(true)
     }
     
     
