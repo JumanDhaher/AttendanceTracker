@@ -14,16 +14,11 @@ struct SendExcuseView: View{
     @State private var note = ""
     @State private var presentImporter = false
     @State private var maxChars: Int = 150
-       @State private var inputText: String = ""
+    @State private var inputText: String = ""
+    
     
     var body:some View{
-
-                        let text = Binding(
-                                        get: { self.inputText },
-                                        set: { self.inputText = String($0.prefix(maxChars))}
-                                    )
-                        
-                        NavigationView{
+                        VStack{
                             
                             Color.gray.opacity(0.1)
                                 .cornerRadius(8)
@@ -142,10 +137,9 @@ struct SendExcuseView: View{
                                         }
                                     }.padding()
                                 }
-                                .navigationTitle(Text("Send Excuse"))
+                             .navigationTitle(Text("Send Excuse"))
                             .toolbar{
                                 Button("Send") {
-                                    
                                     print("title : "+title1)
                                     print("Excuse Type: "+title)
                                     print(selectedDate)

@@ -29,8 +29,8 @@ struct LateHoursView: View{
                 printDefaultMsg(message: "declined")
             }//end of VStack
             
-        }.padding().navigationTitle(Text("Late Hours"))
-            .background(Color("Background"))
+        }.padding()  .background(Color("Background")).navigationTitle(Text("Late Hours Details "))
+          
     }//body view
     
     //function that creates boxes of each absence day and its infromation
@@ -40,7 +40,7 @@ struct LateHoursView: View{
             RoundedRectangle(cornerRadius: 16).fill(Color("CardColor"))
             ZStack{
                 GroupBox(label: Text(label)
-                    .foregroundColor(Color.black))
+                    .foregroundColor(Color("TitleColor")))
                 {
                     Text(info)
                         .font(.callout)

@@ -66,7 +66,7 @@ struct GuidBookView: View{
             
             """)
                 }.multilineTextAlignment(.leading).padding()
-            }.padding().navigationTitle(Text("The Guide Book"))
+            }.padding()  .background(Color("Background")).navigationTitle(Text("The Guide Book"))
         }
     
 }
