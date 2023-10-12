@@ -1,7 +1,13 @@
+//
+//  ExcuseInfoViewDeclined.swift
+//  firstXcode
+//
+//  Created by Juman Dhaher on 27/03/1445 AH.
+//
 
 import SwiftUI
 
-struct ExcuseInfoViewAccpted: View {
+struct ExcuseInfoViewDeclined: View {
     var body: some View {
         List {
             Section(header: Text("Date")) {
@@ -16,14 +22,14 @@ struct ExcuseInfoViewAccpted: View {
             Section(header: Text("Notes")) {
                 Text("Appropriate use of monthly leave")
             }
-        }.navigationTitle(Text("Accpted Status"))
+        }.navigationTitle(Text("Declined Status"))
             .background(Color("Background"))
     }
 }
 
-struct ExcuseInfoViewAccpted_Previews: PreviewProvider {
+struct ExcuseInfoViewDeclined_Previews: PreviewProvider {
     static var previews: some View {
-        ExcuseInfoViewAccpted().preferredColorScheme(.light)
-        ExcuseInfoViewAccpted().preferredColorScheme(.dark)
+        ExcuseInfoViewDeclined().preferredColorScheme(.light)
+        ExcuseInfoViewDeclined().preferredColorScheme(.dark)
     }
 }

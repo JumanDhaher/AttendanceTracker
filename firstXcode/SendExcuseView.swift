@@ -36,7 +36,7 @@ struct SendExcuseView: View{
                                                     
                                                     HStack{
                                                         
-                                                        Text("  Title:")
+                                                        Text("Title:")
                                                         Spacer()
                                                         Picker("Excuse Category",
                                                                selection: $title1) {
