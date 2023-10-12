@@ -8,8 +8,10 @@
 import SwiftUI
 import Firebase
 
+
 struct LoginView: View{
-    
+    static var emailUser: String = ""
+
     @State private var email : String = ""
     @State private var errorMessage : String = ""
     @State private var userIsLoggedIn : Bool = false
@@ -61,13 +63,13 @@ struct LoginView: View{
             }
               //  .navigationTitle(Text("Lgoin"))
                 //.navigationBarBackButtonHidden(true)
-        }.navigationBarHidden(true)
+        }
     }
     
     
     func login(){
         print("tittle",email)
-        
+        LoginView.emailUser = email
         Auth.auth().signIn(withEmail: email.lowercased(), password: "1234567"){result,error in
             if error != nil{
                 print(error!.localizedDescription)

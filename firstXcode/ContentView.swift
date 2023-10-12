@@ -11,6 +11,7 @@ import Firebase
 struct ContentView: View {
     @State private var userLoggedOut : Bool = false
 
+
     var body: some View {
         NavigationStack{
             if(userLoggedOut){
@@ -20,7 +21,7 @@ struct ContentView: View {
                 ScrollView {
                     VStack(alignment: .leading,spacing: 12){
                         Text("Summary").font(.largeTitle)
-                        
+                        Text(LoginView.emailUser)
                         NavigationLink(destination:AbsenceDaysView(), label:{
                             boxContent(title:"Absence Days",dec:"Exceeding 15 days of absences without an excuse will disqualify you from the program.",precentageText: "5/15",precentage:0.5,
                                        firstColor: Color("PinkColor").opacity(0.5) ,secondColor:Color("PinkColor"))
@@ -63,7 +64,7 @@ struct ContentView: View {
                     }
                     .padding(.all)
                     .background(  Color("Background")).ignoresSafeArea(.all)
-                    .navigationTitle("Juman Dhaher")
+                    .navigationTitle(" ")
                     .padding(.top)
                     .toolbar{
                         Button("Sign out"){
@@ -79,7 +80,7 @@ struct ContentView: View {
                     }
                 }
             }
-        } .navigationBarBackButtonHidden(true)
+        }
         
     }
     
