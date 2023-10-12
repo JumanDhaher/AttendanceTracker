@@ -11,8 +11,10 @@ import Firebase
 struct LoginView: View{
     
     @State private var email : String = ""
+    @State private var errorMessage : String = ""
     @State private var userIsLoggedIn : Bool = false
-    
+    @State var showingAlert: Bool = false
+
 
     var body:some View{
         NavigationStack{
@@ -28,6 +30,7 @@ struct LoginView: View{
                         .padding()
                         .background(Color("CardColor")).foregroundColor(Color("SubtitleColor"))
                         .cornerRadius(10)
+                    
                     HStack{
                         Image(systemName: "info.circle")
                         Text("Insert your achademic email").foregroundColor(Color("TitleColor"))
@@ -47,6 +50,8 @@ struct LoginView: View{
                                 userIsLoggedIn.toggle()
                             }
                         }
+                    } .alert(errorMessage, isPresented: $showingAlert) {
+                        Button("OK", role: .cancel) { }
                     }
                     
                     Spacer()
@@ -66,6 +71,8 @@ struct LoginView: View{
         Auth.auth().signIn(withEmail: email.lowercased(), password: "1234567"){result,error in
             if error != nil{
                 print(error!.localizedDescription)
+                errorMessage=error!.localizedDescription
+                showingAlert = true
             }
         }
     }
