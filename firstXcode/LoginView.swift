@@ -69,6 +69,7 @@ struct LoginView: View{
     
     func login(){
         print("tittle",email)
+        UserDefaults.standard.set(self.email, forKey: "email")
         LoginView.emailUser = email
         Auth.auth().signIn(withEmail: email.lowercased(), password: "1234567"){result,error in
             if error != nil{

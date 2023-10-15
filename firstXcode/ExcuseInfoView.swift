@@ -1,19 +1,25 @@
 import SwiftUI
 
 struct ExcuseInfoView: View {
+    var Date : String
+    var type : String
+    var excuse : String
+    var status: String
+    var notes: String
+
     var body: some View {
         List {
             Section(header: Text("Date")) {
-                Text("04 sept 2023")
+                Text(Date)
             }
-            Section(header: Text("Excuse Type")) {
-                Text("Monthly leave")
+            Section(header: Text(type)) {
+                Text(excuse)
             }
             Section(header: Text("Status")) {
-                Text("Accepted")
+                Text(status)
             }
             Section(header: Text("Notes")) {
-                Text("Appropriate use of monthly leave")
+                Text(notes)
             }
         }.navigationTitle(Text("Excuse Information"))
             .background(Color("Background"))
@@ -23,8 +29,8 @@ struct ExcuseInfoView: View {
 
 struct ExcuseInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        ExcuseInfoView().preferredColorScheme(.light)
-        ExcuseInfoView().preferredColorScheme(.dark)
+        ExcuseInfoView(Date:"",type: "",excuse: "",status: "",notes: "").preferredColorScheme(.light)
+        ExcuseInfoView(Date:"",type: "",excuse: "",status: "",notes: "").preferredColorScheme(.dark)
     }
 }
 

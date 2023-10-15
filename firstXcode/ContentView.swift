@@ -10,6 +10,8 @@ import Firebase
 
 struct ContentView: View {
     @State private var userLoggedOut : Bool = false
+  
+    let data = HomeViewModel().GetData()
 
 
     var body: some View {
@@ -21,17 +23,18 @@ struct ContentView: View {
                 ScrollView {
                     VStack(alignment: .leading,spacing: 12){
                         Text("Summary").font(.largeTitle)
-                        Text(LoginView.emailUser)
                         NavigationLink(destination:AbsenceDaysView(), label:{
-                            boxContent(title:"Absence Days",dec:"Exceeding 15 days of absences without an excuse will disqualify you from the program.",precentageText: "5/15",precentage:0.5,
+                            boxContent(title:"Absence Days",dec:"Exceeding 15 days of absences without an excuse will disqualify you from the program.",
+                                       precentageText:"\(data.numOfAbsence)/15",
+                                       precentage:data.numOfAbsencePrecentage,
                                        firstColor: Color("PinkColor").opacity(0.5) ,secondColor:Color("PinkColor"))
                         })
                         NavigationLink(destination:LateHoursView(), label:{
-                            boxContent(title:"Late Hours",dec:"Arriving late for a total of 4 hours will be counted as an unexcused absence.",precentageText: "1/4",precentage:0.8,
+                            boxContent(title:"Late Hours",dec:"Arriving late for a total of 4 hours will be counted as an unexcused absence.",precentageText: "\(data.numOfLate)/4",precentage:data.numOfLatePrecentage,
                                        firstColor:Color("GreenColor").opacity(0.5),
                                        secondColor:Color("GreenColor"))
                         })
-                        boxContent(title:"Monthly Leave",dec:"You are allowed 2 hours of monthly leave each month.",precentageText: "0/2",precentage:0.5,
+                        boxContent(title:"Monthly Leave",dec:"You are allowed 2 hours of monthly leave each month.",precentageText: "\(data.numOfLeave)/2",precentage:data.numOfLeavePrecentage,
                                    firstColor:Color("PurpleColor").opacity(0.5),
                                    secondColor:Color("PurpleColor")
                         )
@@ -64,7 +67,7 @@ struct ContentView: View {
                     }
                     .padding(.all)
                     .background(  Color("Background")).ignoresSafeArea(.all)
-                    .navigationTitle(" ")
+                    .navigationTitle(data.userName)
                     .padding(.top)
                     .toolbar{
                         Button("Sign out"){
@@ -124,7 +127,9 @@ struct ContentView: View {
         
     
     
-    func logout(){
+    func logout() {
+        let prefs = UserDefaults.standard
+         prefs.removeObject(forKey:"email")
         do { try Auth.auth().signOut() }
             catch { print("already logged out") }
     }

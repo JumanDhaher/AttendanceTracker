@@ -8,25 +8,68 @@
 import SwiftUI
 
 struct LateHoursView: View{
-    
+    let data = HomeViewModel().GetLateHours()
+
     var body:some View{
         ScrollView{
             VStack(alignment: .leading){
-                printTitle(title: "Pending")
+                if(!data.pending.isEmpty){
+                    printTitle(title: "Pending \(data.pending.count)")
+                     ForEach(data.pending, id: \.self) { pending in
+                       NavigationLink(
+                                    destination: ExcuseInfoView(
+                                        Date: pending.Date,
+                                        type: pending.type,
+                                        excuse: pending.excuse,
+                                        status: pending.status,
+                                        notes: pending.notes
+                                    ), label:{
+                                       LateHoursView().createInfoBox(label: pending.Date, info: "\(pending.type)\n\(pending.excuse)", excuseStatus: "Pending")
+                                   })
+                 }
+                }
                 
-                NavigationLink(destination: ExcuseInfoView(), label:{
-                    createInfoBox(label: "1 Oct 2023", info: "Late Arrival Excuse"+"\n30 minutes", excuseStatus: "Pending")
-                })//end of navigation link
 
-                printTitle(title: "Accepted")
+                if(!data.accepted.isEmpty){
+                    printTitle(title: "Accepted \(data.accepted.count)")
+                    ForEach(data.accepted, id: \.self) { accepted in
+                        NavigationLink(destination: ExcuseInfoView(
+                            Date: accepted.Date,
+                            type: accepted.type,
+                            excuse: accepted.excuse,
+                            status: accepted.status,
+                            notes: accepted.notes
+                        ), label:{
+                            LateHoursView().createInfoBox(label: accepted.Date, info:"\(accepted.type)\n\(accepted.excuse)",
+                                                        excuseStatus: "Accepted")
+                        })//end of navigation link
+                    }
+                }
                 
-                NavigationLink(destination: ExcuseInfoView(), label:{
-                    createInfoBox(label: "25 Sep 2023", info: "Late Arrival Excuse"+"\n1 hour", excuseStatus: "Accepted")
-                })//end of navigation link
+                if(!data.rejected.isEmpty){
+                    printTitle(title: "Declined \(data.rejected.count)")
+                    ForEach(data.rejected, id: \.self) { rejected in
+                        NavigationLink(destination: ExcuseInfoView(
+                            Date: rejected.Date,
+                            type: rejected.type,
+                            excuse: rejected.excuse,
+                            status: rejected.status,
+                            notes: rejected.notes ), label:{
+                            LateHoursView().createInfoBox(label: rejected.Date, info:"\(rejected.type)\n\(rejected.excuse)",
+                                                        excuseStatus: "Declined")
+                        })//end of navigation link
+                    }
+                }
                 
-                printTitle(title: "Declined")
+                if((data.pending.isEmpty) && (data.accepted.isEmpty) && (data.rejected.isEmpty)){
+                    VStack{
+                        Spacer(minLength: 250)
+                        Text("No data about Late Hours ").frame(maxWidth: .infinity)
+                    }.frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                }
+
+             
                 
-                printDefaultMsg(message: "declined")
             }//end of VStack
             
         }.padding()  .background(Color("Background")).navigationTitle(Text("Late Hours Details "))

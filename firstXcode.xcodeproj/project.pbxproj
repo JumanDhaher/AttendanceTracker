@@ -189,6 +189,7 @@
 				6F8840582ACE93C30053258D /* firstXcodeApp.swift */,
 				6FF6E2202AD555B400626CBE /* LoginView.swift */,
 				6F88405A2ACE93C30053258D /* ContentView.swift */,
+				6FB734D32AD696D500E0CE81 /* homeViewModel.swift */,
 				6FCE66CD2AD28659001264FF /* GuidebookView.swift */,
 				6FCE66D12AD28E7E001264FF /* SendExcuseView.swift */,
 				6FCE66D32AD28F56001264FF /* LateHoursView.swift */,
@@ -196,7 +197,6 @@
 				6FCE66D52AD28F7A001264FF /* AbsenceDaysView.swift */,
 				6F88405C2ACE93C40053258D /* Assets.xcassets */,
 				6F88405E2ACE93C40053258D /* Preview Content */,
-				6FB734D32AD696D500E0CE81 /* homeViewModel.swift */,
 			);
 			path = firstXcode;
 			sourceTree = "<group>";
