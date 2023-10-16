@@ -37,7 +37,7 @@ struct MonthlyLeaveHours: View {
                     }
                 }
                 
-        }.padding().navigationTitle(Text("Absence Days"))
+        }.padding().navigationTitle(Text("Monthly Leave"))
             .background(Color("Background"))
     }
 }
