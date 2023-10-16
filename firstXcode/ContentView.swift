@@ -34,11 +34,12 @@ struct ContentView: View {
                                        firstColor:Color("GreenColor").opacity(0.5),
                                        secondColor:Color("GreenColor"))
                         })
+                        NavigationLink(destination:MonthlyLeaveHours(), label:{
                         boxContent(title:"Monthly Leave",dec:"You are allowed 2 hours of monthly leave each month.",precentageText: "\(data.numOfLeave)/2",precentage:data.numOfLeavePrecentage,
                                    firstColor:Color("PurpleColor").opacity(0.5),
                                    secondColor:Color("PurpleColor")
                         )
-                        
+                        })
                         Text("The Guide book").font(.title)
                         
                         NavigationLink(destination: GuidBookView(), label:{

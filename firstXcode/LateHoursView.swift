@@ -64,7 +64,7 @@ struct LateHoursView: View{
                 if((data.pending.isEmpty) && (data.accepted.isEmpty) && (data.rejected.isEmpty)){
                     VStack{
                         Spacer(minLength: 250)
-                        Text("No data about Late Hours ").frame(maxWidth: .infinity)
+                        Text("You don't have any late hours excuses").frame(maxWidth: .infinity)
                     }.frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 }
 

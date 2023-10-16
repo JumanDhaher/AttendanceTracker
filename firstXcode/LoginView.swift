@@ -44,6 +44,10 @@ struct LoginView: View{
                         HStack{
                             Spacer()
                             Text("Login")
+                                .bold()
+                                .frame(width: 95.0, height: 30.0)
+                                .background(Color("GreenColor")).foregroundColor(.white)
+                                .cornerRadius(8)
                             Spacer()
                         }
                     }.onAppear{
