@@ -26,7 +26,7 @@ struct LoginView: View{
                 VStack(alignment:.leading){
                     
                     Spacer()
-                    
+                    Image("logo").resizable().frame(width: 300,height: 300)
                     Text("Email")
                     TextField("email @ twq.idserve.net",text: $email)
                         .padding()

@@ -4,12 +4,12 @@ class HomeViewModel{
     func GetData() -> UserModel{
         let email = UserDefaults.standard.string(forKey: "email")?.lowercased()
         var userData : UserModel
-        userData = UserModel(userName: "First",
-                             numOfAbsence: "15",
+        userData = UserModel(userName: "",
+                             numOfAbsence: "",
                              numOfAbsencePrecentage: 0.0,
-                             numOfLate: "4",
+                             numOfLate: "",
                              numOfLatePrecentage: 0.0,
-                             numOfLeave: "2",
+                             numOfLeave: "",
                              numOfLeavePrecentage: 0.0)
         if( email == "jdhaher23@twq.idserve.net") {
             userData = UserModel(userName: "Juman Dhaher",
