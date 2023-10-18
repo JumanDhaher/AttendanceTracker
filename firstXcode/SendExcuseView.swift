@@ -9,6 +9,8 @@ import SwiftUI
 import Firebase
 
 struct SendExcuseView: View{
+@Environment(\.dismiss) var dismiss
+
 @State private var selectedDate = Date.now
 @State private var title = ""
 @State private var excuseType = ""
@@ -132,6 +134,7 @@ var body:some View{
             .toolbar{
                 Button("Send") {
                     SendEmailButton()
+                    dismiss()
                 }
             }
         
